@@ -1,10 +1,11 @@
  import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-
+import "./App.css"
 export default function FileImages() {
   return (
-    <ImageList sx={{ width: "100%", height: "auto" }}>
+    
+    <ImageList className ="imageWrapper">
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -12,6 +13,7 @@ export default function FileImages() {
             src={`${item.img}?w=248&fit=crop&auto=format`}
             alt={item.title}
             loading="lazy"
+            style ={{padding:12}}
           />
           <ImageListItemBar sx ={{textAlign:"center"}}
             title={item.title}

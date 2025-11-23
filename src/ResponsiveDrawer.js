@@ -20,6 +20,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import FileImages from './FileImages';
 import ImageSlider from './ImageSlider';
+import "./App.css"
 
 const drawerWidth = 240;
 
@@ -91,10 +92,10 @@ export default function ResponsiveDrawer() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex',width:"100%"}} >
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
+      <AppBar position="fixed" open={open} >
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -114,19 +115,19 @@ export default function ResponsiveDrawer() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
+     <Drawer
+  sx={{
+    width: drawerWidth,   
+    flexShrink: 0,
+    '& .MuiDrawer-paper': {
+      width:  drawerWidth ,
+      boxSizing: 'border-box',
+    },
+  }}
+  variant="persistent"
+  anchor="left"
+  open={open}
+>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
@@ -159,7 +160,7 @@ export default function ResponsiveDrawer() {
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
+      <Main open={open} className ="main" >
         <DrawerHeader />
        <ImageSlider/>
        <FileImages/>
